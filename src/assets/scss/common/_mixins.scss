@@ -1,0 +1,18 @@
+$viewports: (
+  phone:        "only screen and (max-width: 575px)",
+  mobile:       "only screen and (max-width: 1199px)",
+  tablet:       "only screen and (min-width: 575px) and (max-width: 1200px)",
+  tablet-min:   "only screen and (min-width: 575px)",
+  desktop:      "only screen and (min-width: 1200px)",
+);
+
+@mixin media-bp($prefix) {
+  @if map-get($viewports, $prefix) {
+    $media-query: map-get($viewports, $prefix);
+    @media #{$media-query} {
+      @content;
+    }
+  } @else {
+    @warn 'please define a real device';
+  }
+}
