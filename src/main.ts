@@ -6,6 +6,7 @@ import './registerServiceWorker';
 
 import * as Sentry from '@sentry/browser';
 import * as Integrations from '@sentry/integrations';
+
 import VueAnalytics from 'vue-analytics';
 
 Vue.config.productionTip = false;
