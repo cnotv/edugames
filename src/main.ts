@@ -6,6 +6,7 @@ import './registerServiceWorker';
 
 import * as Sentry from '@sentry/browser';
 import * as Integrations from '@sentry/integrations';
+import VueAnalytics from 'vue-analytics';
 
 Vue.config.productionTip = false;
 
@@ -14,6 +15,10 @@ Sentry.init({
   integrations: [new Integrations.Vue({Vue, attachProps: true})],
   environment: process.env.NODE_ENV,
   release: process.env.VERSION,
+});
+
+Vue.use(VueAnalytics, {
+  id: 'UA-23472711-11',
 });
 
 new Vue({
