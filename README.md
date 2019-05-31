@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/32357878-206c-467c-8385-6c1e3a6bae43/deploy-status)](https://app.netlify.com/sites/cnotv-edugames/deploys)
+
 # edugames
 
 ## Project setup

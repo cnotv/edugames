@@ -10,6 +10,7 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "animate.css": "^3.7.1",
     "pug-plain-loader": "^1.0.0",
     "register-service-worker": "^1.5.2",
     "vue": "^2.6.6",
