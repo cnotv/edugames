@@ -10,6 +10,8 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "@sentry/browser": "^5.4.0",
+    "@sentry/integrations": "^5.4.0",
     "animate.css": "^3.7.1",
     "pug-plain-loader": "^1.0.0",
     "register-service-worker": "^1.5.2",
