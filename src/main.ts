@@ -18,7 +18,7 @@ Sentry.init({
 });
 
 Vue.use(VueAnalytics, {
-  id: 'UA-23472711-11',
+  id: 'UA-23472711-12',
 });
 
 new Vue({
