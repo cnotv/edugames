@@ -17,12 +17,17 @@ import Cards from '@/components/Cards.vue'; // @ is an alias to /src
   data() {
     return {
       animals: [
-        'Bear',
-        'Dog',
-        'Cat',
-        'Fox',
-        'Bee',
-        'Monkey',
+        {face: '🐻', name: 'Bear'},
+        {face: '🐷', name: 'Pig'},
+        {face: '🐮', name: 'Cow'},
+        {face: '🐴', name: 'Horse'},
+        {face: '🐷', name: 'Pig'},
+        {face: '🐶', name: 'Dog'},
+        {face: '🦁', name: 'Lion'},
+        {face: '🐱', name: 'Cat'},
+        {face: '🦊', name: 'Fox'},
+        {face: '🐝', name: 'Bee'},
+        {face: '🐵', name: 'Monkey'},
       ],
     };
   },

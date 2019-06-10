@@ -1,6 +1,6 @@
 <template lang="pug">
   ul
-    li(v-for="card in cards", 'v-on:click'='activate') {{card}}
+    li(v-for="card in cards", 'v-on:click'='activate') {{card.face ? card.face : card}}
 
 </template>
 
@@ -25,7 +25,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
       const msg = new SpeechSynthesisUtterance();
       const voices = window.speechSynthesis.getVoices();
       const voice = voices.filter(voice => ['en', 'en-US'].includes(voice.lang))[0];
-      msg.text = text;
+      msg.text = text.name ? text.name : text;
       // Set the attributes.
       // msg.volume = 100
       msg.rate = 0.7
