@@ -11,7 +11,6 @@ export default {
     return {
       finish: 10,
       current: 1,
-      voices: window.speechSynthesis.getVoices()
     }
   },
   methods: {
@@ -24,9 +23,13 @@ export default {
     },
 
     speak (text) {
-      const msg = new SpeechSynthesisUtterance()
+      const msg = new SpeechSynthesisUtterance();
+      const voices = window.speechSynthesis.getVoices();
+      const voice = voices.filter(voice => ['en'].includes(voice.lang))[0];
       msg.text = text
-      msg.voice = this.voices[10]
+      msg.rate = 0.7
+      msg.pitch = 1.2
+      msg.voice = voice;
       window.speechSynthesis.speak(msg)
     },
 

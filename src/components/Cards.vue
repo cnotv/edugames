@@ -18,18 +18,19 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
   data() {
     return {
       animations: ['bounce', 'rubberBand', 'shake', 'swing', 'tada', 'wobble', 'jello'],
-      voices: window.speechSynthesis.getVoices(),
     };
   },
   methods: {
     speak(text) {
       const msg = new SpeechSynthesisUtterance();
+      const voices = window.speechSynthesis.getVoices();
+      const voice = voices.filter(voice => ['en', 'en-US'].includes(voice.lang))[0];
       msg.text = text;
       // Set the attributes.
       // msg.volume = 100
-      // msg.rate = 1
-      // msg.pitch = 150
-      msg.voice = this.voices[5];
+      msg.rate = 0.7
+      msg.pitch = 1.2
+      msg.voice = voice;
       window.speechSynthesis.speak(msg);
     },
     activate(event) {
