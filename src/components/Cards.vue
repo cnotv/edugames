@@ -68,7 +68,6 @@ ul {
   height: 100vh;
   display: grid;
 
-  font-size: 5vw;
   line-height: 100%;
   text-align: center;
   text-transform: uppercase;
@@ -107,6 +106,7 @@ li {
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
     grid-column-gap: 1px;
     grid-row-gap: 1px;
+    font-size: 5vw;
   }
 }
 
@@ -115,6 +115,7 @@ li {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column-gap: 1px;
     grid-row-gap: 1px;
+    font-size: 6vh;
   }
 }
 </style>
