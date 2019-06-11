@@ -24,12 +24,12 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
     speak(text) {
       const msg = new SpeechSynthesisUtterance();
       const voices = window.speechSynthesis.getVoices();
-      const voice = voices.filter(voice => ['en', 'en-US'].includes(voice.lang))[0];
+      const voice = voices.filter((el) => ['en', 'en-US'].includes(el.lang))[0];
       msg.text = text.name ? text.name : text;
       // Set the attributes.
       // msg.volume = 100
-      msg.rate = 0.7
-      msg.pitch = 1.2
+      msg.rate = 0.7;
+      msg.pitch = 1.2;
       msg.voice = voice;
       window.speechSynthesis.speak(msg);
     },
@@ -67,9 +67,6 @@ ul {
 
   height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-column-gap: 1px;
-  grid-row-gap: 1px;
 
   font-size: 5vw;
   line-height: 100%;
@@ -102,6 +99,22 @@ li {
   li:nth-of-type(#{$i}) {
     $color: hslColor($hue: $i*80);
     background-color: $color;
+  }
+}
+
+@media (orientation: landscape) {
+  ul {
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
+  }
+}
+
+@media (orientation: portrait) {
+  ul {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 1px;
+    grid-row-gap: 1px;
   }
 }
 </style>

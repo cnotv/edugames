@@ -7,60 +7,66 @@
 <script>
 export default {
   name: 'Numbers',
-  data () {
+  data() {
     return {
       finish: 10,
       current: 1,
-    }
+    };
   },
   methods: {
-    hue () {
-      return 'rgb(' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ',' + (Math.floor(Math.random() * 256)) + ')'
+    hue() {
+      return 'rgb('
+      + (Math.floor(Math.random() * 256))
+      + ','
+      + (Math.floor(Math.random() * 256))
+      + ','
+      + (Math.floor(Math.random() * 256))
+      + ')';
     },
 
-    size (max = 200, min = 50, unit = 'px') {
-      return Math.floor(Math.random() * (max - min)) + min + unit
+    size(max = 200, min = 50, unit = 'px') {
+      return Math.floor(Math.random() * (max - min)) + min + unit;
     },
 
-    speak (text) {
+    speak(text) {
       const msg = new SpeechSynthesisUtterance();
       const voices = window.speechSynthesis.getVoices();
-      const voice = voices.filter(voice => ['en'].includes(voice.lang))[0];
-      msg.text = text
-      msg.rate = 0.7
-      msg.pitch = 1.2
+      const voice = voices.filter((el) => ['en'].includes(el.lang))[0];
+      msg.text = text;
+      msg.rate = 0.7;
+      msg.pitch = 1.2;
       msg.voice = voice;
-      window.speechSynthesis.speak(msg)
+      window.speechSynthesis.speak(msg);
     },
 
-    randomize (el) {
+    randomize(el) {
       Object.assign(
         el.style, {
           background: this.hue(),
           height: this.size(300, 100, 'px'),
           width: this.size(300, 100, 'px'),
           marginTop: this.size(-25, 25, 'vh'),
-          marginLeft: this.size(-25, 25, 'vw')
-        }
-      )
-      el.innerText = this.current++
+          marginLeft: this.size(-25, 25, 'vw'),
+        },
+      );
+      el.innerText = this.current++;
 
       if (el.innerText >= this.finish) {
-        this.current = 1
+        this.current = 1;
       }
     },
 
-    activate (event) {
-      this.randomize(this.$el.children[0])
-      window.speechSynthesis.cancel()
-      this.speak(this.$el.children[0].innerText)
-    }
+    activate(event) {
+      this.randomize(this.$el.children[0]);
+      window.speechSynthesis.cancel();
+      this.speak(this.$el.children[0].innerText);
+    },
   },
 
-  mounted () {
-    this.randomize(this.$el.children[0])
-  }
-}
+  mounted() {
+    this.randomize(this.$el.children[0]);
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
